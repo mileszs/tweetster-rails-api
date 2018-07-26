@@ -6,7 +6,6 @@ class Tweet < ApplicationRecord
   end
 
   def display_name
-    return username unless username.blank?
-    "#{first_name} #{last_name}"
+    "Saiyan News Bot"
   end
 end

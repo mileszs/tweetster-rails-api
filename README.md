@@ -1,24 +1,17 @@
-# README
+Use the first two sections of [this guide](https://gorails.com/setup/osx/10.13-high-sierra) for getting Ruby setup on your machine– _Installing Ruby_ and _Configuring Git_. Then run the following command to pull down this bare Rails API project to get started:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+git clone git@github.com:mileszs/tweetster-rails-api.git
+```
 
-Things you may want to cover:
+To get this up and running, run the following commands in order:
 
-* Ruby version
+```
+bundle install
+bundle exec rake db:create db:migrate db:seed
+bundle exec rails server
+```
 
-* System dependencies
+At this point, you should have the Rails server up and running on port `3000`. You're ready to get cracking!
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Side note: I like [this tool called HTTPie](https://httpie.org/doc) to quickly test endpoints via the command line. If you already have a favorite, please do use your favorite! Otherwise, this one is pretty straightforward. :-)

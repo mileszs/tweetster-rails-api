@@ -1,4 +1,4 @@
-name: Upstream CI
+name: aUpstream CI
 
 on: [push]
 

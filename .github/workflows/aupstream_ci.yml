@@ -9,9 +9,15 @@ jobs:
     # problem, bo moze byc inny basebranch
     steps:
     - uses: actions/checkout@v2
+      
+    - uses: trilom/file-changes-action@v1
+      with: 
+        githubToken: ${{ secrets.GITHUB_TOKEN }}  
+
+    - uses: actions/checkout@v2
       with:
         ref: master
-    
+
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.4.x  

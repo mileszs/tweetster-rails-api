@@ -9,7 +9,7 @@ namespace :my_namespace do
     data_hash = JSON.parse(file)
     puts data_hash
     stdout, stdeerr, status = Open3.capture3("bundle exec rspec -f j #{data_hash.to_a}")
-    output = JSON.pars(stdout)
+    output = JSON.parse(stdout)
     output['examples'].each_with_object({}) { |item, obj| obj[item['status']] = obj.fetch(item['status'], []) << item['full_description'] }
   end
 end

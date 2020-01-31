@@ -16,9 +16,11 @@ jobs:
       with: 
         githubToken: ${{ secrets.GITHUB_TOKEN }}      
         
-    - name: Build and test with Rake
+    - name: Build
       run: |
         sudo apt-get install libsqlite3-dev
         gem install bundler
         bundle install --jobs 4 --retry 3
+    - name: Test
+      run: |
         bundle exec rake my_namespace:my_task1${{ steps.file_changes.outputs.files_modified}}

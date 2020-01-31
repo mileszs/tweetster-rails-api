@@ -15,11 +15,12 @@ jobs:
     - uses: trilom/file-changes-action@v1
       with: 
         githubToken: ${{ secrets.GITHUB_TOKEN }}      
-        
-    - name: Build
+    - name: Install dependentices
+      run: sudo apt-get install libsqlite3-dev
+    - name: Bundler Install
       run: |
-        sudo apt-get install libsqlite3-dev
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rake my_namespace:my_task1${{ steps.file_changes.outputs.files_modified}}
+    - name: Test
+      run: bundle exec rake my_namespace:my_task1
 

@@ -5,6 +5,7 @@ namespace :my_namespace do
     puts "hello gej"
     file = File.read(File.join(ENV['HOME'], 'files_modified.json'))
     data_hash = JSON.parse(file)
+    puts()
     puts data_hash
   end
 end

@@ -7,13 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby 2.4
+
     - uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.4.x   
+        ruby-version: 2.4.x
+
     - uses: trilom/file-changes-action@v1
       with: 
-        githubToken: ${{ secrets.GITHUB_TOKEN }}       
+        githubToken: ${{ secrets.GITHUB_TOKEN }}      
+        
     - name: Build and test with Rake
       run: |
         sudo apt-get install libsqlite3-dev

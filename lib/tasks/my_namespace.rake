@@ -6,13 +6,13 @@ namespace :my_namespace do
   task my_task1: :environment do
     begin
       file = File.read(File.join(ENV['HOME'], 'files_modified.json'))
-      data_hash = JSON.parse(file)
+      data_hash = JSON.parse(file).map { |p| File.join(Rails.root, p) }
     rescue
       data_hash = [Rails.root]
     end
     puts data_hash
 
-    stdout, stdeerr, status = Open3.capture3("RAILS_ENV=development bundle exec rspec -f j /Users/macos/tweetster-rails-api")
+    stdout, stdeerr, status = Open3.capture3("RAILS_ENV=development bundle exec rspec -f j #{data_hash.join(' ')}")
 
     output = JSON.parse(stdout)
     out = output['examples'].each_with_object({}) { |item, obj| obj[item['status']] = obj.fetch(item['status'], []) << item['full_description'] }
@@ -36,7 +36,7 @@ namespace :my_namespace do
         puts
         puts
         File.delete(File.join(ENV['HOME'], 'difference.txt'))
-        
+
         raise "DUPA KAMIENI KUPA"
       end
       File.delete(File.join(ENV['HOME'], 'difference.txt'))

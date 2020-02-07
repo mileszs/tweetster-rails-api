@@ -16,6 +16,33 @@ namespace :my_namespace do
 
     output = JSON.parse(stdout)
     out = output['examples'].each_with_object({}) { |item, obj| obj[item['status']] = obj.fetch(item['status'], []) << item['full_description'] }
+
+    if File.exists?(File.join(ENV['HOME'], 'difference.txt'))
+      # 2 time
+
+      master_output = JSON.parse(File.read(File.join(ENV['HOME'], 'difference.txt')))
+
+      master_failed = master_output["failed"].to_a
+      this_failed = out["failed"].to_a
+
+
+      diff = this_failed - master_failed
+
+      if diff != []
+        puts
+        puts
+        group.each { |g| puts "#{FAIL}!!! - #{g}"}
+        raise "DUPA KAMIENI KUPA"
+      end
+
+    else
+      # 1 time
+      File.open(File.join(ENV['HOME'], 'difference.txt')) do |f|
+        f.write(out.to_json)
+      end
+    end
+
+
     out.each do |status, group|
       group.each { |g| puts "#{status} - #{g}"}
     end

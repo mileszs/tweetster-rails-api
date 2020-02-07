@@ -19,7 +19,7 @@ namespace :my_namespace do
 
     if File.exists?(File.join(ENV['HOME'], 'difference.txt'))
       # 2 time
-
+      puts 'second time...'
       master_output = JSON.parse(File.read(File.join(ENV['HOME'], 'difference.txt')))
 
       master_failed = master_output["failed"].to_a
@@ -28,16 +28,22 @@ namespace :my_namespace do
 
       diff = this_failed - master_failed
 
+      puts diff
       if diff != []
         puts
         puts
-        group.each { |g| puts "#{FAIL}!!! - #{g}"}
+        diff.each { |g| puts "FAILLL!!! - #{g}"}
+        puts
+        puts
+        File.delete(File.join(ENV['HOME'], 'difference.txt'))
+        
         raise "DUPA KAMIENI KUPA"
       end
-
+      File.delete(File.join(ENV['HOME'], 'difference.txt'))
     else
       # 1 time
-      File.open(File.join(ENV['HOME'], 'difference.txt')) do |f|
+      puts 'first time...'
+      File.open(File.join(ENV['HOME'], 'difference.txt'), 'w') do |f|
         f.write(out.to_json)
       end
     end

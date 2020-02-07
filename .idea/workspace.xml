@@ -4,7 +4,6 @@
     <list default="true" id="65f8c01f-4a84-4e67-98ae-149e6689537f" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/spec/models/tweet_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/tasks/my_namespace.rake" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tasks/my_namespace.rake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/models/tweet_test.rb" beforeDir="false" />
     </list>

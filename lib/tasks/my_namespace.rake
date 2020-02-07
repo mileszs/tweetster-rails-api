@@ -12,7 +12,6 @@ namespace :my_namespace do
     end
     puts data_hash
 
-    Open3.capture3("cd #{Rails.root}")
     stdout, stdeerr, status = Open3.capture3("RAILS_ENV=development bundle exec rspec -f j /Users/macos/tweetster-rails-api")
 
     output = JSON.parse(stdout)

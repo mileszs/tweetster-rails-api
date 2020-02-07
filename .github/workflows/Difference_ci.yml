@@ -27,6 +27,7 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
+        rake db:migrate RAILS_ENV=development
     - name: Testing master...
       run: bundle exec rake my_namespace:my_task1
       

@@ -1,4 +1,4 @@
-name: aUpstream CI
+name: Difference CI
 
 on: [push]
 
@@ -27,5 +27,19 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-    - name: Test
+    - name: Testing master...
+      run: bundle exec rake my_namespace:my_task1
+      
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.4.x  
+    - name: Install dependentices
+      run: sudo apt-get install libsqlite3-dev
+    - name: Bundler Install
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+    - name: Testing your branch....
       run: bundle exec rake my_namespace:my_task1

@@ -11,6 +11,10 @@ RSpec.describe Tweet do
     it { expect(49).to eq("beka") }
   end
   
+    context 'Nowy adaddssypiacy sie test' do
+    it { expect(49).to eq("beka") }
+  end
+  
   
     context 'bardziej Nowy sypiacy sie test' do
     it { expect(493).to eq("bekda") }

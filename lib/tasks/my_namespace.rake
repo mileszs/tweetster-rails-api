@@ -2,9 +2,15 @@ require 'json'
 require 'open3'
 
 TEST_RESULT_FILE = File.join(ENV['HOME'], 'difference.txt')
+CUSTOM_BRANCH_NAME = nil
 
 def branch_name
+  return CUSTOM_BRANCH_NAME if CUSTOM_BRANCH_NAME
   ENV['GITHUB_REF'] && ENV['GITHUB_REF'].split('/')[2]
+end
+
+def current_branch_name
+  `git rev-parse --abbrev-ref HEAD`.chomp
 end
 
 def modified_files
@@ -73,8 +79,13 @@ end
 
 namespace :my_namespace do
   desc "TODO"
-  task my_task1: :environment do
-    if branch_name == 'master'
+  task my_task1: :environment do |_, args|
+    CUSTOM_BRANCH_NAME = ENV['branch']
+
+    raise 'No branch?' if branch_name.nil?
+
+    puts "Target branch is |#{branch_name}|"
+    if current_branch_name == 'master'
       first_master_run
     else
       second_branch_run

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65f8c01f-4a84-4e67-98ae-149e6689537f" name="Default Changelist" comment="rake">
-      <change afterPath="$PROJECT_DIR$/lib/tasks/my_namespace1.rake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Difference_ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Difference_ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tweetster-rails-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tweetster-rails-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/tasks/my_namespace.rake" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tasks/my_namespace.rake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/models/tweet2_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/tweet2_spec.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -27,8 +26,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/my_namespace.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+            <state relative-caret-position="781">
+              <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/models/tweet2_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -51,6 +59,7 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/spec/models/tweet_spec.rb" />
         <option value="$PROJECT_DIR$/.github/workflows/Difference_ci.yml" />
+        <option value="$PROJECT_DIR$/spec/models/tweet2_spec.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/my_namespace.rake" />
       </list>
     </option>
@@ -111,12 +120,6 @@
               <item name="tweetster-rails-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="tweetster-rails-api" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tweetster-rails-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tweetster-rails-api" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tweetster-rails-api" type="b2602c69:ProjectViewProjectNode" />
@@ -289,12 +292,12 @@
       <workItem from="1581685360988" duration="1539000" />
       <workItem from="1582119994545" duration="1751000" />
       <workItem from="1582294250526" duration="246000" />
-      <workItem from="1582296032651" duration="691000" />
+      <workItem from="1582296032651" duration="1902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13024000" />
+    <option name="totallyTimeSpent" value="14235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="666" y="-1080" width="1920" height="1080" extended-state="6" />
@@ -386,10 +389,17 @@
     <entry file="file://$PROJECT_DIR$/lib/tasks/my_namespace1.rake">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/tweet2_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/my_namespace.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        <state relative-caret-position="781">
+          <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
         </state>
       </provider>
     </entry>

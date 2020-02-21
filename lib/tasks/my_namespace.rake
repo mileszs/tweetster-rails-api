@@ -5,6 +5,26 @@ namespace :my_namespace do
   desc "TODO"
   task my_task1: :environment do
     begin
+      branch_name = process.env.GITHUB_REF && process.env.GITHUB_REF.split('/')[2]
+      
+      puts "Branch name #{branch_name}"
+      
+      mod_files = `git diff --name-only master #{branch_name}`.split("\n")
+      
+      mod_files.map { |file|
+        if file.ends_with('_spec.rb')
+          file
+        else
+          if check_if_new_file(file)
+          else
+            if check_if_file_exists(Path.join('..', file) + '_spec.rb') do
+              
+          end
+        end
+        
+       
+        }
+      
       file = File.read(File.join(ENV['HOME'], 'files_modified.json'))
       data_hash = JSON.parse(file).map { |p| File.join(Rails.root, p) }
     rescue

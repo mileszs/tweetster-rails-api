@@ -21,12 +21,15 @@ def files_to_run_tests_on
     else
       if file.star_with?('app/') && file.end_with?('.rb')
         candidate = File.join('spec', file[3..-4]) + '_spec.rb'
+<<<<<<< HEAD
         if File.exists?(candidate)
           candidate
         else
           puts "Candidate #{candidate} dosnt exists :/"
           nil
         end
+=======
+>>>>>>> 1c16e6615b4371a0eddadeb22e453b596a1903b1
       end
     end
   end.compact
@@ -34,7 +37,11 @@ end
 
 def run_tests(files)
   puts "running tests on #{files}"
+<<<<<<< HEAD
   stdout, _stdeerr, _status = Open3.capture3("RAILS_ENV=development bundle exec rspec -f j #{files.join(' ')}")
+=======
+  stdout, stdeerr, status = Open3.capture3("RAILS_ENV=development bundle exec rspec -f j #{files.join(' ')}")
+>>>>>>> 1c16e6615b4371a0eddadeb22e453b596a1903b1
 
   output = JSON.parse(stdout)
   out = output['examples'].each_with_object({}) { |item, obj| obj[item['status']] = obj.fetch(item['status'], []) << item['full_description'] }

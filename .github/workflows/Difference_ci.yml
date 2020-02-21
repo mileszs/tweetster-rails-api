@@ -8,10 +8,17 @@ jobs:
     # https://github.com/actions/checkout#Checkout-multiple-repos-private
     # problem, bo moze byc inny basebranch
     steps:
+<<<<<<< HEAD
 
     - uses: trilom/file-changes-action@v1
       with: 
         githubToken: ${{ secrets.GITHUB_TOKEN }}  
+=======
+    - id: file_changes
+      uses: trilom/file-changes-action@v1
+      with:
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
+>>>>>>> 1c16e6615b4371a0eddadeb22e453b596a1903b1
 
     - uses: actions/checkout@v2
       with:
@@ -27,6 +34,10 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
         rake db:migrate RAILS_ENV=development
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c16e6615b4371a0eddadeb22e453b596a1903b1
     - name: Testing master...
       run: bundle exec rake my_namespace:my_task1
       
@@ -41,5 +52,6 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
+        rake db:migrate RAILS_ENV=development
     - name: Testing your branch....
       run: bundle exec rake my_namespace:my_task1

@@ -8,8 +8,7 @@ jobs:
     # https://github.com/actions/checkout#Checkout-multiple-repos-private
     # problem, bo moze byc inny basebranch
     steps:
-    - uses: actions/checkout@v2
-      
+
     - uses: trilom/file-changes-action@v1
       with: 
         githubToken: ${{ secrets.GITHUB_TOKEN }}  

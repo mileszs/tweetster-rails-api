@@ -79,8 +79,8 @@ end
 
 namespace :my_namespace do
   desc "TODO"
-  task my_task1: :environment do |_, args|
-    CUSTOM_BRANCH_NAME = ENV['branch']
+  task my_task1: :environment do
+    CUSTOM_BRANCH_NAME = ENV['BRANCH']
 
     raise 'No branch?' if branch_name.nil?
 
